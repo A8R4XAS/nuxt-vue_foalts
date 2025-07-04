@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: foalts-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: node dist/index.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: nuxt-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: node .output/server/index.mjs
+    plan: free
+    envVars:
+      - key: API_BASE_URL
+        value: https://foalts-backend.onrender.com
