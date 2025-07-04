@@ -4,6 +4,6 @@ import { BaseEntity, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class User extends BaseEntity {
 
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
 }
