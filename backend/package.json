@@ -19,7 +19,8 @@
     "lint:fix": "eslint --ext ts --fix src",
     "makemigrations": "npx foal rmdir build && tsc -p tsconfig.app.json && npx typeorm migration:generate src/migrations/migration -d build/db -p && tsc -p tsconfig.app.json",
     "migrations": "npx typeorm migration:run -d build/db",
-    "revertmigration": "npx typeorm migration:revert -d build/db"
+    "revertmigration": "npx typeorm migration:revert -d build/db",
+    "debug": "echo 'PWD: ' $(pwd) && echo 'NODE_MODULES:' && ls -la node_modules/@types && echo 'TSC VERSION:' && npx tsc -v && echo 'TSC PATH:' && which tsc"
   },
   "engines": {
     "node": ">=18.0.0"
